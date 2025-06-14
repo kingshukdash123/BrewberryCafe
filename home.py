@@ -165,6 +165,8 @@ elif st.session_state.page == "accounts":
     st.button("Back to Home", on_click=go_home)
 
 elif st.session_state.page == "table":
+    st.title("Order Table")
+    st.divider()
 
     if st.session_state.current_user:
         st.title(f"Welcome {st.session_state.current_user.name}")
