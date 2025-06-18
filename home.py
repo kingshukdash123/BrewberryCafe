@@ -147,7 +147,7 @@ elif st.session_state.page == "signin":
 
             else:
                 user_row = df[df["username"] == username]
-                stored_password = str(int(user_row["password"].values[0]))
+                stored_password = str(user_row["password"].values[0])
 
                 if password == stored_password:
                     st.success("Sign in completed successfully.")
@@ -201,17 +201,6 @@ elif st.session_state.page == "table":
         st.caption("You're on the order page. Browse the menu, choose your items, and place your order!")
         st.divider()
 
-    col1, col2 = st.columns(2)
-    with col2:
-        with st.expander("View Snacks Menu", expanded=False) :
-            for i in item.orderItem:
-                st.write(f"{i} : Rs {item.orderItem[i]}/-")
-
-        with st.expander("View Drinks Menu", expanded=False) :
-            for i in item.coldDrinks:
-                st.write(f"{i} : Rs {item.coldDrinks[i]}/-")
-
-    with col1:
         food = []
         cold_drinks = []
 
