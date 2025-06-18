@@ -147,9 +147,9 @@ elif st.session_state.page == "signin":
 
             else:
                 user_row = df[df["username"] == username]
-                stored_password = user_row["password"].values[0]
+                stored_password = str(int(user_row["password"].values[0]))
 
-                if password == str(stored_password):
+                if password == stored_password:
                     st.success("Sign in completed successfully.")
                     st.write("")
 
